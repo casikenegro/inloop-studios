@@ -19,6 +19,7 @@ const translations = {
   es: {
     'nav.home': 'Inicio',
     'nav.game': 'Nuestro juego',
+    'nav.news': 'Novedades',
     'nav.about': 'Quiénes somos',
     'nav.contact': 'Contacto',
     'nav.talk': 'Hablemos',
@@ -27,10 +28,10 @@ const translations = {
     'hero.body': 'Diseñamos mundos, personajes e historias pensados para conectar con quienes los juegan, cuidando cada detalle de la experiencia.',
     'hero.gameButton': 'Conoce nuestro juego',
     'hero.aboutButton': 'Sobre nosotros',
-    'hero.soon': 'PRÓXIMAMENTE',
-    'hero.demo': 'La demo de Shadows of Christmas Eve llegará muy pronto.',
+    'hero.soon': 'DEMO DISPONIBLE',
+    'hero.demo': 'Descubre el inicio de Shadows of Christmas Eve.',
     'game.kicker': 'Nuestro primer juego',
-    'game.description': 'Una navidad marcada por pesadillas, secretos familiares y una presencia que nunca debió despertar.',
+    'game.description': 'Explora una casa que se va transformando a medida que las pesadillas se vuelven cada vez más perturbadoras, mientras presencias parecen observarte desde la oscuridad.',
     'game.tag1': 'Terror psicológico',
     'game.tag2': 'Aventura narrativa',
     'game.tag3': 'Exploración',
@@ -50,11 +51,23 @@ const translations = {
     'contact.body': 'Para colaboraciones, prensa, propuestas o consultas sobre nuestros proyectos, puedes escribirnos directamente.',
     'contact.emailLabel': 'EMAIL',
     'contact.followLabel': 'SÍGUENOS',
+    'support.kicker': 'APÓYANOS',
+    'support.body': 'Apóyanos mientras seguimos desarrollando y mejorando Shadows of Christmas Eve.',
+    'support.button': 'APÓYANOS EN KO-FI',
+    'news.kicker': 'NOVEDADES',
+    'news.title': 'Lo último de InLoop',
+    'news.intro': 'Actualizaciones, eventos, lanzamientos y apariciones de InLoop Studios.',
+    'news.filter.all': 'TODAS',
+    'news.filter.game': 'JUEGO',
+    'news.filter.events': 'EVENTOS',
+    'news.filter.press': 'PRENSA',
+    'news.filter.community': 'COMUNIDAD',
     'footer.copy': '© 2026 InLoop Studios. Todos los derechos reservados.'
   },
   en: {
     'nav.home': 'Home',
     'nav.game': 'Our game',
+    'nav.news': 'News',
     'nav.about': 'About us',
     'nav.contact': 'Contact',
     'nav.talk': 'Let’s talk',
@@ -63,10 +76,10 @@ const translations = {
     'hero.body': 'We design worlds, characters, and stories made to connect with players, carefully shaping every detail of the experience.',
     'hero.gameButton': 'Explore our game',
     'hero.aboutButton': 'About us',
-    'hero.soon': 'COMING SOON',
-    'hero.demo': 'The Shadows of Christmas Eve demo is coming soon.',
+    'hero.soon': 'DEMO AVAILABLE',
+    'hero.demo': 'Discover the beginning of Shadows of Christmas Eve.',
     'game.kicker': 'Our first game',
-    'game.description': 'A christmas shaped by nightmares, family secrets, and a presence that should never have awakened.',
+    'game.description': 'Explore a house that changes as nightmares grow increasingly disturbing, while unseen presences seem to watch you from the darkness.',
     'game.tag1': 'Psychological horror',
     'game.tag2': 'Narrative adventure',
     'game.tag3': 'Exploration',
@@ -86,6 +99,17 @@ const translations = {
     'contact.body': 'For collaborations, press inquiries, proposals, or questions about our projects, feel free to contact us directly.',
     'contact.emailLabel': 'EMAIL',
     'contact.followLabel': 'FOLLOW US',
+    'support.kicker': 'SUPPORT US',
+    'support.body': 'Support us while we continue developing and improving Shadows of Christmas Eve.',
+    'support.button': 'SUPPORT US ON KO-FI',
+    'news.kicker': 'NEWS',
+    'news.title': 'InLoop latest',
+    'news.intro': 'Updates, events, launches, and appearances from InLoop Studios.',
+    'news.filter.all': 'ALL',
+    'news.filter.game': 'GAME',
+    'news.filter.events': 'EVENTS',
+    'news.filter.press': 'PRESS',
+    'news.filter.community': 'COMMUNITY',
     'footer.copy': '© 2026 InLoop Studios. All rights reserved.'
   }
 };
@@ -107,6 +131,7 @@ function setLanguage(lang) {
   });
 
   localStorage.setItem('inloop-language', lang);
+  window.dispatchEvent(new CustomEvent('languageChanged', { detail: lang }));
 }
 
 languageButtons.forEach(button => {
