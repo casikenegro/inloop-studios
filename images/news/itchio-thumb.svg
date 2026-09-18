@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="bg1" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#07090b"/>
+      <stop offset="45%" stop-color="#11190f"/>
+      <stop offset="100%" stop-color="#040506"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" x2="1">
+      <stop offset="0%" stop-color="#f7d98a"/>
+      <stop offset="45%" stop-color="#d6a651"/>
+      <stop offset="100%" stop-color="#f1d89b"/>
+    </linearGradient>
+    <filter id="softBlur"><feGaussianBlur stdDeviation="3"/></filter>
+  </defs>
+
+  <rect width="1600" height="900" fill="url(#bg1)"/>
+
+  <g opacity="0.9">
+    <rect x="0" y="0" width="1600" height="900" fill="transparent"/>
+    <circle cx="120" cy="130" r="3" fill="#ffd45a"/>
+    <circle cx="220" cy="120" r="3" fill="#ffd45a"/>
+    <circle cx="300" cy="140" r="3" fill="#f9d76a"/>
+    <circle cx="1350" cy="160" r="3" fill="#ffd45a"/>
+    <circle cx="1410" cy="140" r="3" fill="#ffd45a"/>
+    <circle cx="1490" cy="170" r="3" fill="#f9d76a"/>
+  </g>
+
+  <g opacity="0.7">
+    <path d="M0 730 L160 500 L250 730 L330 560 L430 730 L520 540 L620 730 L760 500 L820 730 L900 540 L990 730 L1080 502 L1175 730 L1260 560 L1360 730 L1600 730 L1600 900 L0 900 Z" fill="#0d1011"/>
+    <path d="M90 730 L180 650 L210 730 L260 620 L310 730 L360 640 L430 730 L520 610 L570 730 L640 630 L700 730 L760 590 L830 730 L900 630 L970 730 L1040 600 L1100 730 L1190 630 L1245 730 L1305 610 L1360 730 L1450 620 L1540 730" fill="none" stroke="#1d2923" stroke-width="4"/>
+  </g>
+
+  <g>
+    <path d="M700 470 Q760 370 830 470 L800 660 L730 660 Z" fill="#27150d" opacity="0.35"/>
+    <path d="M830 470 Q895 370 960 470 L930 660 L860 660 Z" fill="#27150d" opacity="0.28"/>
+  </g>
+
+  <g opacity="0.75">
+    <rect x="560" y="150" width="500" height="8" rx="4" fill="#e1c96d" opacity="0.9"/>
+    <rect x="620" y="120" width="390" height="8" rx="4" fill="#e1c96d" opacity="0.7"/>
+    <rect x="520" y="182" width="570" height="7" rx="4" fill="#e1c96d" opacity="0.7"/>
+  </g>
+
+  <g filter="url(#softBlur)" opacity="0.35">
+    <circle cx="680" cy="170" r="18" fill="#f8cf66"/>
+    <circle cx="900" cy="170" r="18" fill="#f8cf66"/>
+  </g>
+
+  <g>
+    <text x="800" y="470" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="110" font-weight="700" fill="url(#gold)" letter-spacing="5">SHADOWS</text>
+    <text x="800" y="560" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="90" font-weight="700" fill="url(#gold)" letter-spacing="4">OF</text>
+    <text x="800" y="650" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="110" font-weight="700" fill="url(#gold)" letter-spacing="4">CHRISTMAS EVE</text>
+  </g>
+
+  <g>
+    <rect x="620" y="700" width="360" height="76" rx="38" fill="#efefef" opacity="0.16"/>
+    <circle cx="680" cy="738" r="19" fill="#f4f4f4" opacity="0.9"/>
+    <path d="M680 720 L690 730 L700 738 L690 750 L680 760 L670 750 L660 738 L670 730 Z" fill="#0e1114" opacity="0.85"/>
+    <text x="722" y="748" text-anchor="start" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700" letter-spacing="3" fill="#f5f5f5">DEMO AVAILABLE NOW</text>
+  </g>
+
+  <g opacity="0.9">
+    <path d="M1180 610 C1185 490, 1270 470, 1268 610" fill="none" stroke="#3a302a" stroke-width="18" stroke-linecap="round"/>
+    <rect x="1188" y="485" width="85" height="120" rx="20" fill="#2a2020" opacity="0.8"/>
+    <path d="M1215 178 C1188 178, 1178 198, 1178 222 C1178 255, 1210 288, 1215 326 C1220 288, 1255 255, 1255 222 C1255 197, 1240 178, 1215 178 Z" fill="#7f1f29"/>
+    <circle cx="1215" cy="248" r="18" fill="#2b1b1a"/>
+  </g>
+</svg>

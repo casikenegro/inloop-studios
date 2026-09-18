@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Novedades | InLoop Studios</title>
+  <meta name="description" content="Actualizaciones, eventos, lanzamientos y apariciones de InLoop Studios y Shadows of Christmas Eve." />
+  <meta name="theme-color" content="#080808" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Marcellus&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a href="../#inicio" class="brand" aria-label="InLoop Studios">
+      <img src="../assets/logo-inloop.png" alt="InLoop Studios" />
+    </a>
+
+    <button class="menu-toggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="nav">
+      <a href="../#inicio" data-i18n="nav.home">Inicio</a>
+      <a href="../#juego" data-i18n="nav.game">Nuestro juego</a>
+      <a href="./" data-i18n="nav.news">Novedades</a>
+      <a href="../#nosotros" data-i18n="nav.about">Quiénes somos</a>
+
+      <div class="language-switch" aria-label="Selector de idioma">
+        <button type="button" data-lang="es" class="active">ES</button>
+        <span>/</span>
+        <button type="button" data-lang="en">EN</button>
+      </div>
+
+      <a class="nav-button" href="../#contacto" data-i18n="nav.talk">Hablemos</a>
+    </nav>
+  </header>
+
+  <main class="news-page">
+    <div class="news-page-shell">
+      <header class="news-header">
+        <p class="kicker news-kicker" data-i18n="news.kicker">NOVEDADES</p>
+        <h1 data-i18n="news.title">Lo último de InLoop</h1>
+        <p class="news-intro" data-i18n="news.intro">Actualizaciones, eventos, lanzamientos y apariciones de InLoop Studios.</p>
+      </header>
+
+      <div class="news-toolbar" aria-label="Filtros de novedades">
+        <div class="news-filters" role="tablist" aria-label="Categorías de novedades">
+          <button type="button" class="news-filter active" data-filter="all" data-i18n="news.filter.all" aria-pressed="true">TODAS</button>
+          <button type="button" class="news-filter" data-filter="juego" data-i18n="news.filter.game" aria-pressed="false">JUEGO</button>
+          <button type="button" class="news-filter" data-filter="eventos" data-i18n="news.filter.events" aria-pressed="false">EVENTOS</button>
+          <button type="button" class="news-filter" data-filter="prensa" data-i18n="news.filter.press" aria-pressed="false">PRENSA</button>
+          <button type="button" class="news-filter" data-filter="comunidad" data-i18n="news.filter.community" aria-pressed="false">COMUNIDAD</button>
+        </div>
+      </div>
+
+      <section class="news-grid" id="newsGrid" aria-live="polite"></section>
+    </div>
+  </main>
+
+  <footer>
+    <img src="../assets/logo-inloop.png" alt="InLoop Studios" />
+    <p>© 2026 InLoop Studios. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="../script.js"></script>
+  <script>
+    const newsItems = {
+      es: [
+        {
+          title: 'Shadows of Christmas Eve en Chile Game Showcase 2026',
+          date: '12 SEPTIEMBRE 2026',
+          dateKey: '2026-09-12',
+          category: 'EVENTO',
+          description: 'InLoop Studios participó en Chile Game Showcase 2026 para presentar la demo y conectar con la comunidad gamer chilena.',
+          image: 'https://chilegameshowcase.com/assets/venue-2026.jpg',
+          type: 'external',
+          url: 'https://www.chilegameshowcase.com/',
+          slug: '',
+          cta: 'VER EVENTO →',
+          published: true,
+          filter: 'eventos'
+        },
+        {
+          title: 'La demo de Shadows of Christmas Eve ya está disponible en Steam',
+          date: '8 SEPTIEMBRE 2026',
+          dateKey: '2026-09-08',
+          category: 'LANZAMIENTO',
+          description: 'Ya puedes probar la demo gratuita y añadir el juego a tu wishlist desde la página oficial de Steam.',
+          image: '../images/news/steam-thumb.png',
+          imageAlign: 'right',
+          type: 'external',
+          url: 'https://store.steampowered.com/app/4969370/Shadows_of_Christmas_Eve/',
+          slug: '',
+          cta: 'VER EN STEAM →',
+          published: true,
+          filter: 'juego'
+        },
+        {
+          title: 'Shadows of Christmas Eve llega a itch.io',
+          date: '4 SEPTIEMBRE 2026',
+          dateKey: '2026-09-04',
+          category: 'LANZAMIENTO',
+          description: 'La demo ya está publicada en itch.io, con acceso directo para probar la experiencia desde la web.',
+          image: '../images/news/itchio-thumb.png',
+          type: 'external',
+          url: 'https://inloopstudios.itch.io/shadows-of-christmas-eve',
+          slug: '',
+          cta: 'VER EN ITCH.IO →',
+          published: true,
+          filter: 'juego'
+        },
+        {
+          title: 'Shadows of Christmas Eve aparece en Games Ardor',
+          date: '16 SEPTIEMBRE 2026',
+          dateKey: '2026-09-16',
+          category: 'PRENSA',
+          description: 'El proyecto formó parte de una selección de juegos destacados de Steam para septiembre de 2026.',
+          image: '../images/news/games-ardor-thumb.png',
+          type: 'external',
+          url: 'https://gamesardor.net/top-steam-games-september-2026/',
+          slug: '',
+          cta: 'VER PUBLICACIÓN →',
+          published: true,
+          filter: 'prensa'
+        },
+        {
+          title: 'Shadows of Christmas Eve destacado en Indie Hispano',
+          date: '18 SEPTIEMBRE 2026',
+          dateKey: '2026-09-18',
+          category: 'PRENSA',
+          description: 'Shadows of Christmas Eve forma parte de Indie Hispano, una iniciativa de MajoIndies dedicada a descubrir juegos de estudios españoles y latinoamericanos.',
+          image: '../images/news/indie-hispano-thumb.png',
+          type: 'external',
+          url: 'https://majoindies.netlify.app/hispano.html#hispano-shadows-of-christmas-eve',
+          slug: '',
+          cta: 'VER PUBLICACIÓN →',
+          published: true,
+          filter: 'prensa'
+        },
+        {
+          title: 'Shadows of Christmas Eve compartido con la comunidad',
+          date: '20 SEPTIEMBRE 2026',
+          dateKey: '2026-09-20',
+          category: 'COMUNIDAD',
+          description: 'Un creador de contenido compartió Shadows of Christmas Eve con su comunidad.',
+          image: '../images/news/instagram-reel-thumb.png',
+          type: 'external',
+          url: 'https://www.instagram.com/reel/DdXOxiay4Z0/',
+          slug: '',
+          cta: 'VER PUBLICACIÓN →',
+          published: true,
+          filter: 'comunidad'
+        },
+        {
+          title: 'Gameplay trailer de la demo de Shadows of Christmas Eve',
+          date: '2 SEPTIEMBRE 2026',
+          dateKey: '2026-09-02',
+          category: 'TRAILER',
+          description: 'Un vistazo al comienzo de la demo con exploración, pistas, tensión y la primera mirada a la pesadilla.',
+          image: 'https://img.youtube.com/vi/azSS-kR1qTQ/maxresdefault.jpg',
+          type: 'external',
+          url: 'https://www.youtube.com/watch?v=azSS-kR1qTQ',
+          slug: '',
+          cta: 'VER GAMEPLAY →',
+          published: true,
+          filter: 'juego'
+        },
+        {
+          title: 'Tráiler oficial de Shadows of Christmas Eve',
+          date: '25 AGOSTO 2026',
+          dateKey: '2026-08-25',
+          category: 'TRAILER',
+          description: 'El tráiler oficial presenta la atmósfera, la tensión y la historia que rodea la casa que cambia con la pesadilla.',
+          image: 'https://img.youtube.com/vi/sjTLP1u7Qiw/maxresdefault.jpg',
+          type: 'external',
+          url: 'https://www.youtube.com/watch?v=sjTLP1u7Qiw',
+          slug: '',
+          cta: 'VER TRAILER →',
+          published: true,
+          filter: 'juego'
+        }
+      ],
+      en: [
+        {
+          title: 'Shadows of Christmas Eve at Chile Game Showcase 2026',
+          date: 'SEPTEMBER 12, 2026',
+          dateKey: '2026-09-12',
+          category: 'EVENT',
+          description: 'InLoop Studios attended Chile Game Showcase 2026 to present the demo and connect with the local gaming community.',
+          image: 'https://chilegameshowcase.com/assets/venue-2026.jpg',
+          type: 'external',
+          url: 'https://www.chilegameshowcase.com/',
+          slug: '',
+          cta: 'VIEW EVENT →',
+          published: true,
+          filter: 'eventos'
+        },
+        {
+          title: 'The Shadows of Christmas Eve demo is now available on Steam',
+          date: 'SEPTEMBER 8, 2026',
+          dateKey: '2026-09-08',
+          category: 'LAUNCH',
+          description: 'You can try the free demo and add the game to your wishlist from the official Steam page.',
+          image: '../images/news/steam-thumb.png',
+          imageAlign: 'right',
+          type: 'external',
+          url: 'https://store.steampowered.com/app/4969370/Shadows_of_Christmas_Eve/',
+          slug: '',
+          cta: 'VIEW ON STEAM →',
+          published: true,
+          filter: 'juego'
+        },
+        {
+          title: 'Shadows of Christmas Eve is live on itch.io',
+          date: 'SEPTEMBER 4, 2026',
+          dateKey: '2026-09-04',
+          category: 'LAUNCH',
+          description: 'The demo is now published on itch.io for direct access and early testing.',
+          image: '../images/news/itchio-thumb.png',
+          type: 'external',
+          url: 'https://inloopstudios.itch.io/shadows-of-christmas-eve',
+          slug: '',
+          cta: 'VIEW ON ITCH.IO →',
+          published: true,
+          filter: 'juego'
+        },
+        {
+          title: 'Shadows of Christmas Eve featured on Games Ardor',
+          date: 'SEPTEMBER 16, 2026',
+          dateKey: '2026-09-16',
+          category: 'PRESS',
+          description: 'The project was included in a curated spotlight of standout Steam games for September 2026.',
+          image: '../images/news/games-ardor-thumb.png',
+          type: 'external',
+          url: 'https://gamesardor.net/top-steam-games-september-2026/',
+          slug: '',
+          cta: 'READ FEATURE →',
+          published: true,
+          filter: 'prensa'
+        },
+        {
+          title: 'Shadows of Christmas Eve featured on Indie Hispano',
+          date: 'SEPTEMBER 18, 2026',
+          dateKey: '2026-09-18',
+          category: 'PRESS',
+          description: 'Shadows of Christmas Eve is part of Indie Hispano, an initiative by MajoIndies to spotlight games from Spanish and Latin American studios.',
+          image: '../images/news/indie-hispano-thumb.png',
+          type: 'external',
+          url: 'https://majoindies.netlify.app/hispano.html#hispano-shadows-of-christmas-eve',
+          slug: '',
+          cta: 'READ FEATURE →',
+          published: true,
+          filter: 'prensa'
+        },
+        {
+          title: 'Shadows of Christmas Eve shared with the community',
+          date: 'SEPTEMBER 20, 2026',
+          dateKey: '2026-09-20',
+          category: 'COMMUNITY',
+          description: 'A content creator shared Shadows of Christmas Eve with their community.',
+          image: '../images/news/instagram-reel-thumb.png',
+          type: 'external',
+          url: 'https://www.instagram.com/reel/DdXOxiay4Z0/',
+          slug: '',
+          cta: 'VIEW POST →',
+          published: true,
+          filter: 'comunidad'
+        },
+        {
+          title: 'Gameplay trailer for the Shadows of Christmas Eve demo',
+          date: 'SEPTEMBER 2, 2026',
+          dateKey: '2026-09-02',
+          category: 'TRAILER',
+          description: 'A first look at the demo with exploration, clues, tension, and the first signs of the nightmare.',
+          image: 'https://img.youtube.com/vi/azSS-kR1qTQ/maxresdefault.jpg',
+          type: 'external',
+          url: 'https://www.youtube.com/watch?v=azSS-kR1qTQ',
+          slug: '',
+          cta: 'WATCH GAMEPLAY →',
+          published: true,
+          filter: 'juego'
+        },
+        {
+          title: 'Official trailer for Shadows of Christmas Eve',
+          date: 'AUGUST 25, 2026',
+          dateKey: '2026-08-25',
+          category: 'TRAILER',
+          description: 'The official trailer presents the atmosphere, tension, and story behind the house that changes with the nightmare.',
+          image: 'https://img.youtube.com/vi/sjTLP1u7Qiw/maxresdefault.jpg',
+          type: 'external',
+          url: 'https://www.youtube.com/watch?v=sjTLP1u7Qiw',
+          slug: '',
+          cta: 'WATCH TRAILER →',
+          published: true,
+          filter: 'juego'
+        }
+      ]
+    };
+
+    const newsGrid = document.getElementById('newsGrid');
+    const filterButtons = document.querySelectorAll('.news-filter');
+    let currentNewsLang = localStorage.getItem('inloop-language') || 'es';
+
+    function getVisibleNews() {
+      const activeItems = newsItems[currentNewsLang] || newsItems.es;
+      return activeItems
+        .filter(item => item.published)
+        .sort((a, b) => new Date(b.dateKey || '1970-01-01') - new Date(a.dateKey || '1970-01-01'));
+    }
+
+    function renderNews(filter = 'all') {
+      const visibleNews = getVisibleNews();
+      const filtered = filter === 'all'
+        ? visibleNews
+        : visibleNews.filter(item => item.filter === filter);
+
+      newsGrid.innerHTML = filtered.map((item, index) => {
+        const href = item.type === 'external' && item.url ? item.url : item.type === 'internal' && item.slug ? `./${item.slug}/` : '';
+        const tagName = href ? 'a' : 'article';
+        const externalIcon = item.type === 'external' && item.url
+          ? '<svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3h7v7M13 3L6 10M9 13H3V7"/></svg>'
+          : '';
+
+        return `
+          <${tagName}
+            class="news-card ${item.type} ${index === 0 ? 'featured' : ''}"
+            ${href ? `href="${href}"` : ''}
+            ${item.type === 'external' && item.url ? 'target="_blank" rel="noopener noreferrer"' : ''}
+            aria-label="${item.title}"
+          >
+            <div class="news-card-media ${item.imageAlign === 'right' ? 'media-shift-right' : ''}">
+              <img src="${item.image}" alt="${item.title}" />
+            </div>
+            <div class="news-card-content">
+              <div class="news-meta-row">
+                <span class="news-category">${item.category}</span>
+                <span class="news-date">${item.date}</span>
+              </div>
+              <h3>${item.title}</h3>
+              <p>${item.description}</p>
+              <span class="news-card-cta">
+                ${item.cta}
+                ${externalIcon}
+              </span>
+            </div>
+          </${tagName}>
+        `;
+      }).join('');
+    }
+
+    function syncNewsLanguage(lang) {
+      currentNewsLang = lang;
+      const activeFilter = document.querySelector('.news-filter.active')?.dataset.filter || 'all';
+      renderNews(activeFilter);
+    }
+
+    window.addEventListener('languageChanged', (event) => {
+      syncNewsLanguage(event.detail || localStorage.getItem('inloop-language') || 'es');
+    });
+
+    document.querySelectorAll('[data-lang]').forEach(button => {
+      button.addEventListener('click', () => {
+        syncNewsLanguage(button.dataset.lang);
+      });
+    });
+
+    filterButtons.forEach(button => {
+      button.addEventListener('click', () => {
+        const filter = button.dataset.filter;
+        filterButtons.forEach(item => {
+          const active = item === button;
+          item.classList.toggle('active', active);
+          item.setAttribute('aria-pressed', String(active));
+        });
+        renderNews(filter);
+      });
+    });
+
+    syncNewsLanguage(currentNewsLang);
+  </script>
+</body>
+</html>

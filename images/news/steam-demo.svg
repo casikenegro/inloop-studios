@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#0e0e0e"/>
+  <rect x="100" y="100" width="1400" height="700" fill="none" stroke="#d8d8d8" stroke-opacity="0.25"/>
+  <rect x="220" y="205" width="360" height="420" rx="10" fill="#1d1d1d"/>
+  <circle cx="400" cy="315" r="92" fill="#d3d3d3" fill-opacity="0.11"/>
+  <path d="M270 530C345 430 430 420 530 485" fill="none" stroke="#f0f0f0" stroke-width="8" stroke-linecap="round"/>
+  <rect x="660" y="250" width="620" height="40" fill="#f0f0f0" fill-opacity="0.08"/>
+  <rect x="660" y="318" width="520" height="34" fill="#f0f0f0" fill-opacity="0.08"/>
+  <rect x="660" y="390" width="610" height="34" fill="#f0f0f0" fill-opacity="0.08"/>
+  <rect x="660" y="455" width="340" height="34" fill="#f0f0f0" fill-opacity="0.08"/>
+  <text x="800" y="655" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="52" fill="#f1f1f1" letter-spacing="8">STEAM</text>
+</svg>

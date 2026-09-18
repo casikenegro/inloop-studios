@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900">
+  <rect width="1600" height="900" fill="#0a0a0a"/>
+  <rect x="120" y="120" width="1360" height="660" fill="none" stroke="#e3e3e3" stroke-opacity="0.22"/>
+  <rect x="220" y="200" width="1160" height="440" fill="#0f0f0f" stroke="#d7d7d7" stroke-opacity="0.18"/>
+  <circle cx="420" cy="350" r="120" fill="#d9d9d9" fill-opacity="0.08"/>
+  <path d="M500 500L660 320L820 520L990 260L1240 500" fill="none" stroke="#f0f0f0" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="300" y="660" width="980" height="42" fill="#f0f0f0" fill-opacity="0.06"/>
+  <text x="800" y="630" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="44" fill="#f7f7f7" letter-spacing="8">DEMO UPDATE</text>
+</svg>
